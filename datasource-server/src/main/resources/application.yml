@@ -1,0 +1,22 @@
+server:
+  port: 8088
+spring:
+  datasource:
+    master:
+      jdbc-url: jdbc:mysql://192.168.100.101:3306/test
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    slave1:
+      jdbc-url: jdbc:mysql://192.168.100.102:3306/test
+      username: read
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    slave2:
+      jdbc-url: jdbc:mysql://192.168.100.103:3306/test
+      username: read
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+mapper:
+  mappers: tk.mybatis.mapper.common.Mapper,tk.mybatis.mapper.common.IdsMapper
+  identity: MYSQL
